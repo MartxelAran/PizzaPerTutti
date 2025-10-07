@@ -6,7 +6,7 @@ const { limit_cards = false } = Astro.props;
 // Combinar todas las pizzas y limitar a 5 si limit_cards es true
 const todasLasPizzas = [...menu.clasicas, ...menu.especiales];
 const pizzasAMostrar = limit_cards
-  ? todasLasPizzas.slice(0, 5)
+  ? todasLasPizzas.slice(0, 6)
   : todasLasPizzas;
 ---
 
@@ -24,7 +24,7 @@ const pizzasAMostrar = limit_cards
         // Modo limitado: mostrar solo 5 pizzas sin categorías
         <div>
           <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6 text-center">
-            Nuestras Pizzas
+            Nuestras Mejores Pizzas
           </h2>
           <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
             {pizzasAMostrar.map((pizza) => (
@@ -207,7 +207,7 @@ const pizzasAMostrar = limit_cards
     !limit_cards && (
       <div class="text-center mt-12">
         <a
-          href="/menu.pdf"
+          href="https://www.calameo.com/read/0011432645dd8bce1b0c1"
           class="bg-[#C0392B] text-white px-6 py-3 rounded-full hover:bg-[#A93226] transition"
         >
           📄 Descargar carta en PDF

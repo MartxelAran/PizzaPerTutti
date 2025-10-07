@@ -5,7 +5,7 @@ const { headline = "Auténtica pizza italiana. Para llevar o a domicilio." } =
 
 <section
   id="inicio"
-  class="relative h-screen md:h-[70vh] flex items-center bg-black"
+  class="relative h-[600px] md:h-[700px] flex items-center bg-gradient-to-br from-[#2C2C2C] to-[#1a1a1a] overflow-hidden"
 >
   <!-- Video de fondo (autoplay muted loop) o imagen fallback -->
   <video
@@ -13,45 +13,88 @@ const { headline = "Auténtica pizza italiana. Para llevar o a domicilio." } =
     muted
     loop
     playsinline
-    class="absolute inset-0 w-full h-full object-cover opacity-80"
+    class="absolute inset-0 w-full h-full object-cover opacity-40"
   >
     <source src="/videos/oven-hero.mp4" type="video/mp4" />
   </video>
 
+  <!-- Overlay con gradiente -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"
+  >
+  </div>
+
   <div class="container mx-auto px-6 relative z-10">
-    <div class="bg-white/85 p-8 rounded-lg max-w-2xl backdrop-blur-sm">
-      <h2 class="text-4xl md:text-5xl font-title text-ppt-wood">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div
+        class="inline-flex items-center gap-2 bg-[#C0392B]/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg"
+      >
+        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+        <span>Abierto de 19:00 a 23:00</span>
+      </div>
+
+      <!-- Título principal -->
+      <h2
+        class="text-5xl md:text-7xl font-[Lobster] text-white mb-4 leading-tight"
+      >
         Pizza Pertuti
       </h2>
-      <p class="mt-2 text-lg text-gray-700">{headline}</p>
-      <div class="mt-4 flex gap-3">
-        <a href="#carta" class="bg-ppt-red text-white px-4 py-2 rounded"
-          >Ver carta 🍕</a
+
+      <p class="text-xl md:text-2xl text-gray-200 mb-8 font-[Open_Sans]">
+        {headline}
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <a
+          href="/carta"
+          class="inline-flex items-center justify-center gap-2 bg-[#C0392B] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#A93226] transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105"
         >
+          <span>🍕</span>
+          <span>Ver Carta</span>
+        </a>
+        <a
+          href="tel:+34943797526"
+          class="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-[#2C2C2C] px-8 py-4 rounded-full font-semibold text-lg hover:bg-white transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+        >
+          <span>📞</span>
+          <span>Hacer Pedido</span>
+        </a>
       </div>
 
-      <div class="mt-4 text-sm text-gray-600">
-        Abierto hoy de <strong>19:00</strong> a <strong>23:00</strong>
-      </div>
-
-      <div class="mt-6 grid grid-cols-3 gap-4 text-center">
-        <div>
-          <div class="text-3xl">🍞</div>
-          <div class="text-sm">Masa artesanal</div>
+      <!-- Features -->
+      <div class="grid grid-cols-3 gap-6 max-w-2xl">
+        <div
+          class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+        >
+          <div class="text-4xl mb-3">🍞</div>
+          <div class="text-white font-semibold text-sm mb-1">
+            Masa Artesanal
+          </div>
+          <div class="text-gray-300 text-xs">Fermentación lenta</div>
         </div>
-        <div>
-          <div class="text-3xl">🔥</div>
-          <div class="text-sm">Horno de leña</div>
+        <div
+          class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+        >
+          <div class="text-4xl mb-3">🔥</div>
+          <div class="text-white font-semibold text-sm mb-1">Horno de Leña</div>
+          <div class="text-gray-300 text-xs">Cocción perfecta</div>
         </div>
-        <div>
-          <div class="text-3xl">🚗</div>
-          <div class="text-sm">Domicilio & para llevar</div>
+        <div
+          class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+        >
+          <div class="text-4xl mb-3">🚗</div>
+          <div class="text-white font-semibold text-sm mb-1">A Domicilio</div>
+          <div class="text-gray-300 text-xs">Entrega rápida</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- overlay oscuro ligero -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40">
+  <!-- Decorative element -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F8E5C0] to-transparent"
+  >
   </div>
 </section>

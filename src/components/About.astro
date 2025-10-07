@@ -1,32 +1,144 @@
-<section
-  id="sobre"
-  class="container mx-auto px-6 py-12 bg-ppt-cream rounded-lg"
->
-  <div class="md:flex gap-8 items-center">
-    <div class="md:w-1/2">
-      <h3 class="text-3xl font-title text-ppt-wood mb-4">Sobre nosotros</h3>
-      <p>
-        Pizza Pertuti nació hace 10 años de la pasión de dos amigos por la pizza
-        auténtica italiana. Nuestras masas se elaboran a diario, con
-        fermentación lenta y sólo ingredientes frescos. Horno de piedra en uso
-        desde 2015.
-      </p>
-      <p class="mt-4">
-        Ven a probar nuestra masa madre, o pide para llevar. La tradición con un
-        toque moderno.
-      </p>
+<section id="sobre" class="py-20 px-6 bg-white">
+  <div class="container mx-auto max-w-6xl">
+    <!-- Título de sección -->
+    <div class="text-center mb-16">
+      <span
+        class="text-[#C0392B] font-semibold text-sm uppercase tracking-wider"
+        >Nuestra Historia</span
+      >
+      <h3 class="text-4xl md:text-5xl font-[Lobster] text-[#2C2C2C] mt-2 mb-4">
+        Sobre Nosotros
+      </h3>
+      <div class="w-24 h-1 bg-[#C0392B] mx-auto rounded-full"></div>
     </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-3">
-      <img
-        src="/images/about-1.jpg"
-        alt="Equipo"
-        class="w-full h-40 object-cover rounded"
-      />
-      <img
-        src="/images/about-2.jpg"
-        alt="Horno"
-        class="w-full h-40 object-cover rounded"
-      />
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Contenido de texto -->
+      <div class="space-y-6">
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Pizza Pertuti nació hace <strong class="text-[#C0392B]"
+            >10 años</strong
+          > de la pasión de dos amigos por la pizza auténtica italiana. Nuestras
+          masas se elaboran a diario, con fermentación lenta y sólo ingredientes
+          frescos.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Horno de piedra en uso desde 2015, garantizando el sabor tradicional
+          que nos caracteriza. Ven a probar nuestra masa madre, o pide para
+          llevar.
+          <strong class="text-[#C0392B]"
+            >La tradición con un toque moderno.</strong
+          >
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 pt-8">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-[#C0392B] mb-2">
+              10+
+            </div>
+            <div class="text-sm text-gray-600 font-medium">
+              Años de experiencia
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-[#C0392B] mb-2">
+              25+
+            </div>
+            <div class="text-sm text-gray-600 font-medium">Tipos de pizza</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-[#C0392B] mb-2">
+              100%
+            </div>
+            <div class="text-sm text-gray-600 font-medium">
+              Ingredientes frescos
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="grid grid-cols-2 gap-4 pt-6">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">✓</div>
+            <div>
+              <div class="font-semibold text-[#2C2C2C]">Masa Artesanal</div>
+              <div class="text-sm text-gray-600">Fermentación de 48h</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">✓</div>
+            <div>
+              <div class="font-semibold text-[#2C2C2C]">Horno de Leña</div>
+              <div class="text-sm text-gray-600">Alta temperatura</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">✓</div>
+            <div>
+              <div class="font-semibold text-[#2C2C2C]">
+                Ingredientes Premium
+              </div>
+              <div class="text-sm text-gray-600">Importados de Italia</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">✓</div>
+            <div>
+              <div class="font-semibold text-[#2C2C2C]">Entrega Rápida</div>
+              <div class="text-sm text-gray-600">En tu domicilio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galería de imágenes -->
+      <div class="relative">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div
+              class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              <img
+                src="/images/equipo.png"
+                alt="Nuestro equipo"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+              >
+              </div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                Nuestro Equipo
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div
+              class="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              <img
+                src="/images/horno.jpg"
+                alt="Horno de leña"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+              >
+              </div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                Horno de Leña
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative element -->
+        <div
+          class="absolute -z-10 top-8 -right-8 w-64 h-64 bg-[#C0392B]/10 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
     </div>
   </div>
 </section>

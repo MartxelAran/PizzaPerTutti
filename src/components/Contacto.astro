@@ -1,29 +1,165 @@
-<section id="contacto" class="container mx-auto px-6 py-12">
-  <h3 class="text-3xl font-title text-ppt-wood mb-4">Contacto</h3>
-  <div class="md:flex gap-8">
-    <div class="md:w-1/2">
-      <p>
-        Haz tu pedido o consulta disponibilidad: <strong>📞 943 797 526</strong>
-      </p>
-      <p class="mt-2">
-        Dirección: San Andres Auzoa Auzoa, 10D, 20500 Arrasate / Mondragón,
-        Gipuzkoa
-      </p>
-      <p class="mt-2">Horario: 19:00 - 23:00</p>
-    </div>
-    <div class="md:w-1/2">
-      <!-- Google Maps embed placeholder -->
-      <div
-        class="w-full h-56 bg-gray-200 rounded flex items-center justify-center"
+<section id="contacto" class="py-20 px-6 bg-white">
+  <div class="container mx-auto max-w-7xl">
+    <!-- Título de sección -->
+    <div class="text-center mb-16">
+      <span
+        class="text-[#C0392B] font-semibold text-sm uppercase tracking-wider"
+        >Visítanos</span
       >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.694219281771!2d-2.495841!3d43.064389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd50f7c8e55da59f%3A0x3b2e37eae06f94a3!2sPizza%20Per%20Tutti!5e0!3m2!1ses!2ses!4v1697034600000!5m2!1ses!2ses"
-          width="100%"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h3 class="text-4xl md:text-5xl font-[Lobster] text-[#2C2C2C] mt-2 mb-4">
+        Contacto
+      </h3>
+      <div class="w-24 h-1 bg-[#C0392B] mx-auto rounded-full"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Estamos aquí para servirte. Haz tu pedido o visítanos en nuestro local
+      </p>
+    </div>
+
+    <!-- Grid principal: 4 columnas -->
+    <div class="grid lg:grid-cols-4 gap-8 mb-12">
+      <!-- Columna 1: Tarjeta de teléfono -->
+      <div>
+        <div
+          class="bg-gradient-to-br from-[#C0392B] to-[#A93226] text-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full"
+        >
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 mb-4">
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-sm text-white/80 mb-2">Haz tu pedido</div>
+            <div class="text-2xl font-bold mb-4">943 797 526</div>
+            <a
+              href="tel:+34943797526"
+              class="w-full bg-white text-[#C0392B] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors text-sm text-center"
+            >
+              Llamar ahora
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columnas 2-4: Mapa grande -->
+      <div class="lg:col-span-3">
+        <div
+          class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-100 h-full min-h-[400px]"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.694219281771!2d-2.495841!3d43.064389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd50f7c8e55da59f%3A0x3b2e37eae06f94a3!2sPizza%20Per%20Tutti!5e0!3m2!1ses!2ses!4v1697034600000!5m2!1ses!2ses"
+            width="100%"
+            height="100%"
+            style="border:0; min-height: 400px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid secundario: Información adicional -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <!-- Tarjeta de ubicación -->
+      <div
+        class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-[#C0392B] transition-all duration-300"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-[#C0392B]/10 rounded-full p-4">
+            <svg
+              class="w-8 h-8 text-[#C0392B]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-sm text-gray-600 mb-1">Dirección</div>
+            <div class="text-lg font-semibold text-[#2C2C2C] mb-2">
+              San Andres Auzoa, 10D<br />
+              20500 Arrasate / Mondragón
+            </div>
+            <a
+              href="https://maps.app.goo.gl/12CS2hn9Fce314dJ6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-[#C0392B] hover:text-[#A93226] font-medium text-sm"
+            >
+              <span>Ver en Google Maps</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de horario -->
+      <div
+        class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-[#C0392B] transition-all duration-300"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-[#C0392B]/10 rounded-full p-4">
+            <svg
+              class="w-8 h-8 text-[#C0392B]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-sm text-gray-600 mb-1">Horario</div>
+            <div class="text-lg font-semibold text-[#2C2C2C] mb-1">
+              19:00 - 23:00
+            </div>
+            <div class="text-sm text-gray-600">Todos los días de la semana</div>
+            <div
+              class="inline-flex items-center gap-2 mt-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+            >
+              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+              ></span>
+              <span>Abierto ahora</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

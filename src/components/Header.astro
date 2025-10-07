@@ -6,59 +6,188 @@ const {
 } = Astro.props;
 ---
 
-<header class="bg-white shadow">
-  <div
-    class="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
-  >
-    <div class="flex items-center gap-4">
-      <div>
-        <h1 class="text-2xl font-title text-ppt-wood">{siteTitle}</h1>
-        <p class="text-sm text-gray-600">Auténtica pizza italiana · {town}</p>
-      </div>
-    </div>
-
-    <div class="flex items-center gap-6">
-      <nav class="hidden md:flex gap-4 text-sm">
-        <a href="/" class="hover:text-ppt-red">Inicio</a>
-        <a href="/carta" class="hover:text-ppt-red">Carta</a>
-        <a href="#sobre" class="hover:text-ppt-red">Sobre</a>
-        <a href="#galeria" class="hover:text-ppt-red">Galería</a>
-        <a href="#contacto" class="hover:text-ppt-red">Contacto</a>
-      </nav>
-
-      <div class="text-sm">
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo y título -->
+      <div class="flex items-center gap-3">
         <div
-          id="status-badge"
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700"
+          class="bg-[#C0392B] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl"
         >
-          <svg id="status-dot" class="w-3 h-3 rounded-full bg-gray-400"></svg>
-          <span id="status-text"
-            >Horario: {openHours.start} - {openHours.end}</span
-          >
+          🍕
+        </div>
+        <div>
+          <h1 class="text-2xl font-[Lobster] text-[#2C2C2C] leading-tight">
+            {siteTitle}
+          </h1>
+          <p class="text-xs text-gray-500 font-[Open_Sans]">
+            Auténtica pizza italiana · {town}
+          </p>
         </div>
       </div>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a
+          href="/"
+          class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
+        >
+          Inicio
+        </a>
+        <a
+          href="/carta"
+          class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
+        >
+          Carta
+        </a>
+        <a
+          href="#sobre"
+          class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
+        >
+          Nosotros
+        </a>
+        <a
+          href="#galeria"
+          class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
+        >
+          Galería
+        </a>
+        <a
+          href="#contacto"
+          class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
+        >
+          Contacto
+        </a>
+      </nav>
+
+      <!-- Status Badge & CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <div
+          id="status-badge"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-gray-50 border border-gray-200"
+        >
+          <span
+            id="status-dot"
+            class="w-2.5 h-2.5 rounded-full bg-gray-400 animate-pulse"></span>
+          <span id="status-text" class="text-gray-700">
+            {openHours.start} - {openHours.end}
+          </span>
+        </div>
+
+        <a
+          href="tel:+34943797526"
+          class="bg-[#C0392B] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#A93226] transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+        >
+          <span>📞</span>
+          <span>Llamar</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-gray-700 hover:text-[#C0392B] transition-colors"
+        aria-label="Abrir menú"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+
+    <!-- Mobile Navigation -->
+    <nav
+      id="mobile-menu"
+      class="hidden lg:hidden mt-4 pb-4 border-t border-gray-100"
+    >
+      <div class="flex flex-col gap-3 mt-4">
+        <a
+          href="/"
+          class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Inicio
+        </a>
+        <a
+          href="/carta"
+          class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Carta
+        </a>
+        <a
+          href="#sobre"
+          class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Nosotros
+        </a>
+        <a
+          href="#galeria"
+          class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Galería
+        </a>
+        <a
+          href="#contacto"
+          class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Contacto
+        </a>
+        <a
+          href="tel:+34943797526"
+          class="bg-[#C0392B] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#A93226] transition-colors text-center mt-2"
+        >
+          📞 Llamar ahora
+        </a>
+      </div>
+    </nav>
   </div>
 </header>
 
-<script type="module">
-  // pequeño script para detectar hora local y actualizar el badge (ejemplo básico)
+<script>
+  // Status badge logic
   const start = "19:00";
   const end = "23:00";
-  function timeToMinutes(t) {
+
+  function timeToMinutes(t: string): number {
     const [h, m] = t.split(":").map(Number);
     return h * 60 + m;
   }
+
   const now = new Date();
   const mins = now.getHours() * 60 + now.getMinutes();
   const open = mins >= timeToMinutes(start) && mins <= timeToMinutes(end);
+
   const dot = document.getElementById("status-dot");
   const text = document.getElementById("status-text");
-  if (open) {
-    dot.style.backgroundColor = "#2ecc71";
-    text.textContent = "Abierto ahora · " + start + " - " + end;
-  } else {
-    dot.style.backgroundColor = "#e74c3c";
-    text.textContent = "Cerrado · " + start + " - " + end;
+  const badge = document.getElementById("status-badge");
+
+  if (dot && text && badge) {
+    if (open) {
+      dot.style.backgroundColor = "#2ecc71";
+      text.textContent = "Abierto ahora";
+      badge.classList.add("bg-green-50", "border-green-200");
+      badge.classList.remove("bg-gray-50", "border-gray-200");
+    } else {
+      dot.style.backgroundColor = "#e74c3c";
+      text.textContent = "Cerrado · " + start + " - " + end;
+      badge.classList.add("bg-red-50", "border-red-200");
+      badge.classList.remove("bg-gray-50", "border-gray-200");
+    }
   }
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
 </script>

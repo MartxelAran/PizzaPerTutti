@@ -1,25 +1,105 @@
-<section id="galeria" class="container mx-auto px-6 py-12">
-  <h3 class="text-3xl font-title text-ppt-wood mb-6">Galería</h3>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <img
-      src="/images/gallery-1.jpg"
-      alt=""
-      class="w-full h-40 object-cover rounded"
-    />
-    <img
-      src="/images/gallery-2.jpg"
-      alt=""
-      class="w-full h-40 object-cover rounded"
-    />
-    <img
-      src="/images/gallery-3.jpg"
-      alt=""
-      class="w-full h-40 object-cover rounded"
-    />
-    <img
-      src="/images/gallery-4.jpg"
-      alt=""
-      class="w-full h-40 object-cover rounded"
-    />
+<section id="galeria" class="py-20 px-6 bg-[#F8E5C0]">
+  <div class="container mx-auto max-w-6xl">
+    <!-- Título de sección -->
+    <div class="text-center mb-16">
+      <span
+        class="text-[#C0392B] font-semibold text-sm uppercase tracking-wider"
+        >Nuestras Creaciones</span
+      >
+      <h3 class="text-4xl md:text-5xl font-[Lobster] text-[#2C2C2C] mt-2 mb-4">
+        Galería
+      </h3>
+      <div class="w-24 h-1 bg-[#C0392B] mx-auto rounded-full"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Descubre algunas de nuestras deliciosas pizzas artesanales hechas con
+        amor e ingredientes de la más alta calidad
+      </p>
+    </div>
+
+    <!-- Grid de galería -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div
+        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      >
+        <img
+          src="/images/gallery-1.jpg"
+          alt="Pizza especial"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <div class="absolute bottom-4 left-4 text-white">
+            <div class="font-semibold text-lg">Pizza Especial</div>
+            <div class="text-sm text-gray-200">Ingredientes frescos</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      >
+        <img
+          src="/images/gallery-2.jpg"
+          alt="Pizza margherita"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <div class="absolute bottom-4 left-4 text-white">
+            <div class="font-semibold text-lg">Margherita</div>
+            <div class="text-sm text-gray-200">Clásica italiana</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      >
+        <img
+          src="/images/gallery-3.jpg"
+          alt="Pizza barbacoa"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <div class="absolute bottom-4 left-4 text-white">
+            <div class="font-semibold text-lg">Barbacoa</div>
+            <div class="text-sm text-gray-200">Sabor intenso</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      >
+        <img
+          src="/images/gallery-4.jpg"
+          alt="Pizza 4 quesos"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <div class="absolute bottom-4 left-4 text-white">
+            <div class="font-semibold text-lg">4 Quesos</div>
+            <div class="text-sm text-gray-200">Para los amantes del queso</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-12">
+      <a
+        href="/carta"
+        class="inline-flex items-center gap-2 bg-[#C0392B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#A93226] transition-all duration-200 shadow-lg hover:shadow-xl"
+      >
+        <span>🍕</span>
+        <span>Ver toda la carta</span>
+      </a>
+    </div>
   </div>
 </section>
