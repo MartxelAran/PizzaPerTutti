@@ -1,0 +1,218 @@
+---
+import menu from "../data/menu.json";
+
+const { limit_cards = false } = Astro.props;
+
+// Combinar todas las pizzas y limitar a 5 si limit_cards es true
+const todasLasPizzas = [...menu.clasicas, ...menu.especiales];
+const pizzasAMostrar = limit_cards
+  ? todasLasPizzas.slice(0, 5)
+  : todasLasPizzas;
+---
+
+<section
+  id="carta"
+  class="bg-[#F8E5C0] min-h-screen py-12 px-6 text-[#2C2C2C] font-[Open_Sans]"
+>
+  <h1 class="text-4xl font-[Lobster] text-center text-[#C0392B] mb-8">
+    🍕 Nuestra Carta
+  </h1>
+
+  <div class="max-w-6xl mx-auto space-y-16">
+    {
+      limit_cards ? (
+        // Modo limitado: mostrar solo 5 pizzas sin categorías
+        <div>
+          <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6 text-center">
+            Nuestras Pizzas
+          </h2>
+          <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+            {pizzasAMostrar.map((pizza) => (
+              <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
+                <img
+                  src={pizza.imagen}
+                  alt={pizza.nombre}
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-[#2C2C2C]">
+                      {pizza.nombre}
+                    </h3>
+                    <p class="text-gray-700 text-sm italic">
+                      {pizza.ingredientes}
+                    </p>
+                    {pizza.alergenos && pizza.alergenos.length > 0 && (
+                      <div class="flex gap-1 mt-2 flex-wrap">
+                        {pizza.alergenos.map((alergenoKey: string) => {
+                          const alergeno = (menu.alergenos as any)[alergenoKey];
+                          return alergeno ? (
+                            <div
+                              class="w-7 h-7 rounded-full flex items-center justify-center text-sm shadow-sm border border-gray-200"
+                              style={`background-color: ${alergeno.color}`}
+                              title={alergeno.nombre}
+                            >
+                              {alergeno.icono}
+                            </div>
+                          ) : null;
+                        })}
+                      </div>
+                    )}
+                  </div>
+                  <div class="text-right mt-2 font-semibold text-[#C0392B]">
+                    {pizza.precio}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/carta"
+              class="inline-block bg-[#C0392B] text-white px-6 py-3 rounded-full hover:bg-[#A93226] transition"
+            >
+              Ver toda la carta
+            </a>
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* Modo completo: mostrar todas las pizzas por categorías */}
+          {/* 🧀 CLÁSICAS */}
+          <div>
+            <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6">
+              Clásicas
+            </h2>
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+              {menu.clasicas.map((pizza) => (
+                <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
+                  <img
+                    src={pizza.imagen}
+                    alt={pizza.nombre}
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-4 flex flex-col justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold text-[#2C2C2C]">
+                        {pizza.nombre}
+                      </h3>
+                      <p class="text-gray-700 text-sm italic">
+                        {pizza.ingredientes}
+                      </p>
+                      {pizza.alergenos && pizza.alergenos.length > 0 && (
+                        <div class="flex gap-1 mt-2 flex-wrap">
+                          {pizza.alergenos.map((alergenoKey: string) => {
+                            const alergeno = (menu.alergenos as any)[
+                              alergenoKey
+                            ];
+                            return alergeno ? (
+                              <div
+                                class="w-7 h-7 rounded-full flex items-center justify-center text-sm shadow-sm border border-gray-200"
+                                style={`background-color: ${alergeno.color}`}
+                                title={alergeno.nombre}
+                              >
+                                {alergeno.icono}
+                              </div>
+                            ) : null;
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    <div class="text-right mt-2 font-semibold text-[#C0392B]">
+                      {pizza.precio}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 🔥 ESPECIALES */}
+          <div>
+            <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6">
+              Especiales
+            </h2>
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+              {menu.especiales.map((pizza) => (
+                <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
+                  <img
+                    src={pizza.imagen}
+                    alt={pizza.nombre}
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-4 flex flex-col justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold text-[#2C2C2C]">
+                        {pizza.nombre}
+                      </h3>
+                      <p class="text-gray-700 text-sm italic">
+                        {pizza.ingredientes}
+                      </p>
+                      {pizza.alergenos && pizza.alergenos.length > 0 && (
+                        <div class="flex gap-1 mt-2 flex-wrap">
+                          {pizza.alergenos.map((alergenoKey: string) => {
+                            const alergeno = (menu.alergenos as any)[
+                              alergenoKey
+                            ];
+                            return alergeno ? (
+                              <div
+                                class="w-7 h-7 rounded-full flex items-center justify-center text-sm shadow-sm border border-gray-200"
+                                style={`background-color: ${alergeno.color}`}
+                                title={alergeno.nombre}
+                              >
+                                {alergeno.icono}
+                              </div>
+                            ) : null;
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    <div class="text-right mt-2 font-semibold text-[#C0392B]">
+                      {pizza.precio}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )
+    }
+
+    <!-- 🍮 POSTRES Y BEBIDAS -->
+    {
+      !limit_cards && menu.postres && (
+        <div>
+          <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6">
+            Postres y Bebidas
+          </h2>
+          <div class="bg-white/70 rounded-2xl shadow-md p-6 max-w-3xl mx-auto">
+            <ul class="divide-y divide-gray-300">
+              {menu.postres.map((item) => (
+                <li class="flex justify-between py-2">
+                  <span class="font-medium">{item.nombre}</span>
+                  <span class="font-semibold text-[#C0392B]">
+                    {item.precio}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  {
+    !limit_cards && (
+      <div class="text-center mt-12">
+        <a
+          href="/menu.pdf"
+          class="bg-[#C0392B] text-white px-6 py-3 rounded-full hover:bg-[#A93226] transition"
+        >
+          📄 Descargar carta en PDF
+        </a>
+      </div>
+    )
+  }
+</section>

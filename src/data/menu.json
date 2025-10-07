@@ -1,0 +1,244 @@
+{
+  "alergenos": {
+    "gluten": {
+      "nombre": "Gluten",
+      "icono": "🌾",
+      "color": "#F4A460"
+    },
+    "lacteos": {
+      "nombre": "Lácteos",
+      "icono": "🥛",
+      "color": "#E8F4F8"
+    },
+    "pescado": {
+      "nombre": "Pescado",
+      "icono": "🐟",
+      "color": "#4FC3F7"
+    },
+    "huevo": {
+      "nombre": "Huevo",
+      "icono": "🥚",
+      "color": "#FFF9C4"
+    },
+    "frutos_secos": {
+      "nombre": "Frutos Secos",
+      "icono": "🥜",
+      "color": "#D7CCC8"
+    },
+    "sulfitos": {
+      "nombre": "Sulfitos",
+      "icono": "🍇",
+      "color": "#CE93D8"
+    }
+  },
+  "clasicas": [
+    {
+      "id": 1,
+      "nombre": "Margherita",
+      "ingredientes": "Tomate, mozzarella",
+      "precio": "13€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 2,
+      "nombre": "Napoli",
+      "ingredientes": "Tomate, mozzarella, anchoa, aceituna negra",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "pescado"]
+    },
+    {
+      "id": 3,
+      "nombre": "Prosciutto",
+      "ingredientes": "Tomate, mozzarella, york",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 4,
+      "nombre": "Prosciutto + Funghi",
+      "ingredientes": "Tomate, mozzarella, york, champiñones",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 5,
+      "nombre": "Tonno",
+      "ingredientes": "Tomate, mozzarella, atún, cebolla",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "pescado"]
+    },
+    {
+      "id": 6,
+      "nombre": "Frankfurt",
+      "ingredientes": "Tomate, mozzarella, salchichas frankfurt",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "sulfitos"]
+    },
+    {
+      "id": 7,
+      "nombre": "Pepperoni",
+      "ingredientes": "Tomate, mozzarella, pepperoni",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 8,
+      "nombre": "Funghi",
+      "ingredientes": "Tomate, mozzarella, champiñones",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 9,
+      "nombre": "4 Formaggi",
+      "ingredientes": "Tomate, mozzarella, gorgonzola, cheddar, parmesano",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 10,
+      "nombre": "Bolognesa",
+      "ingredientes": "Tomate, mozzarella, carne de ternera, parmesano",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    }
+  ],
+  "especiales": [
+    {
+      "id": 11,
+      "nombre": "Vegetariana",
+      "ingredientes": "Tomate, mozzarella, calabacín, berenjena, pimiento verde y rojo, cebolla",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 12,
+      "nombre": "Parmigiana",
+      "ingredientes": "Tomate, mozzarella, york, parmesano",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 13,
+      "nombre": "Barbakoa",
+      "ingredientes": "Tomate, mozzarella, salsa barbacoa, ternera, cebolla, pollo y bacon",
+      "precio": "16€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "sulfitos"]
+    },
+    {
+      "id": 14,
+      "nombre": "Brava",
+      "ingredientes": "Tomate, mozzarella, patatas fritas, 2 huevos, salsa brava",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "huevo"]
+    },
+    {
+      "id": 15,
+      "nombre": "4 Stagioni",
+      "ingredientes": "Tomate, mozzarella, york, alcachofas, champiñones, atún",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "pescado"]
+    },
+    {
+      "id": 16,
+      "nombre": "di Franky",
+      "ingredientes": "Tomate, mozzarella, york, ternera, frankfurt, parmesano",
+      "precio": "16€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "sulfitos"]
+    },
+    {
+      "id": 17,
+      "nombre": "di Pep",
+      "ingredientes": "Mozzarella, bacon, pimientos verdes, parmesano y nata",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 18,
+      "nombre": "di Kliba",
+      "ingredientes": "Tomate, mozzarella, prosciutto, champiñones, queso de cabra y cheddar",
+      "precio": "16€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 19,
+      "nombre": "Mama Mia",
+      "ingredientes": "Tomate, mozzarella, cheddar, parmesano, carne de ternera",
+      "precio": "16€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 20,
+      "nombre": "Marijey",
+      "ingredientes": "Mozzarella, berenjena, pollo, parmesano y nata",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 21,
+      "nombre": "Pesto",
+      "ingredientes": "Mozzarella, bacon, pesto y parmesano",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos", "frutos_secos"]
+    },
+    {
+      "id": 22,
+      "nombre": "Da Mikelotti (Napoletana)",
+      "ingredientes": "Tomate, mozzarella, di buffala y albahaca",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 23,
+      "nombre": "Berezia",
+      "ingredientes": "4 ingredientes a tu gusto",
+      "precio": "16€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 24,
+      "nombre": "Carbonara",
+      "ingredientes": "Mozzarella, champiñones, bacon, parmesano, nata",
+      "precio": "15€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    },
+    {
+      "id": 25,
+      "nombre": "Tropikala",
+      "ingredientes": "Mozzarella, york, piña",
+      "precio": "14€",
+      "imagen": "/images/pizzas/barbacoa.png",
+      "alergenos": ["gluten", "lacteos"]
+    }
+  ],
+  "postres": [
+    { "nombre": "Tiramisú", "precio": "3€" },
+    { "nombre": "Refrescos", "precio": "1,5€" },
+    { "nombre": "Cerveza", "precio": "1,75€" },
+    { "nombre": "Portes", "precio": "2€" }
+  ]
+}

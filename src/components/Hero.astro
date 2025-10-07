@@ -1,0 +1,57 @@
+---
+const { headline = "Auténtica pizza italiana. Para llevar o a domicilio." } =
+  Astro.props;
+---
+
+<section
+  id="inicio"
+  class="relative h-screen md:h-[70vh] flex items-center bg-black"
+>
+  <!-- Video de fondo (autoplay muted loop) o imagen fallback -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover opacity-80"
+  >
+    <source src="/videos/oven-hero.mp4" type="video/mp4" />
+  </video>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="bg-white/85 p-8 rounded-lg max-w-2xl backdrop-blur-sm">
+      <h2 class="text-4xl md:text-5xl font-title text-ppt-wood">
+        Pizza Pertuti
+      </h2>
+      <p class="mt-2 text-lg text-gray-700">{headline}</p>
+      <div class="mt-4 flex gap-3">
+        <a href="#carta" class="bg-ppt-red text-white px-4 py-2 rounded"
+          >Ver carta 🍕</a
+        >
+      </div>
+
+      <div class="mt-4 text-sm text-gray-600">
+        Abierto hoy de <strong>19:00</strong> a <strong>23:00</strong>
+      </div>
+
+      <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+        <div>
+          <div class="text-3xl">🍞</div>
+          <div class="text-sm">Masa artesanal</div>
+        </div>
+        <div>
+          <div class="text-3xl">🔥</div>
+          <div class="text-sm">Horno de leña</div>
+        </div>
+        <div>
+          <div class="text-3xl">🚗</div>
+          <div class="text-sm">Domicilio & para llevar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- overlay oscuro ligero -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40">
+  </div>
+</section>

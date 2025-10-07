@@ -1,0 +1,64 @@
+---
+const {
+  siteTitle = "Pizza Pertuti",
+  openHours = { start: "19:00", end: "23:00" },
+  town = "tu pueblo",
+} = Astro.props;
+---
+
+<header class="bg-white shadow">
+  <div
+    class="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+  >
+    <div class="flex items-center gap-4">
+      <div>
+        <h1 class="text-2xl font-title text-ppt-wood">{siteTitle}</h1>
+        <p class="text-sm text-gray-600">Auténtica pizza italiana · {town}</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex gap-4 text-sm">
+        <a href="/" class="hover:text-ppt-red">Inicio</a>
+        <a href="/carta" class="hover:text-ppt-red">Carta</a>
+        <a href="#sobre" class="hover:text-ppt-red">Sobre</a>
+        <a href="#galeria" class="hover:text-ppt-red">Galería</a>
+        <a href="#contacto" class="hover:text-ppt-red">Contacto</a>
+      </nav>
+
+      <div class="text-sm">
+        <div
+          id="status-badge"
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700"
+        >
+          <svg id="status-dot" class="w-3 h-3 rounded-full bg-gray-400"></svg>
+          <span id="status-text"
+            >Horario: {openHours.start} - {openHours.end}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script type="module">
+  // pequeño script para detectar hora local y actualizar el badge (ejemplo básico)
+  const start = "19:00";
+  const end = "23:00";
+  function timeToMinutes(t) {
+    const [h, m] = t.split(":").map(Number);
+    return h * 60 + m;
+  }
+  const now = new Date();
+  const mins = now.getHours() * 60 + now.getMinutes();
+  const open = mins >= timeToMinutes(start) && mins <= timeToMinutes(end);
+  const dot = document.getElementById("status-dot");
+  const text = document.getElementById("status-text");
+  if (open) {
+    dot.style.backgroundColor = "#2ecc71";
+    text.textContent = "Abierto ahora · " + start + " - " + end;
+  } else {
+    dot.style.backgroundColor = "#e74c3c";
+    text.textContent = "Cerrado · " + start + " - " + end;
+  }
+</script>
