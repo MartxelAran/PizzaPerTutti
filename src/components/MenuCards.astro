@@ -71,7 +71,7 @@ const pizzasAMostrar = limit_cards
           </div>
           <div class="text-center mt-8">
             <a
-              href={`${base}carta`}
+              href={`${base}/carta`}
               class="inline-block bg-[#C0392B] text-white px-6 py-3 rounded-full hover:bg-[#A93226] transition"
             >
               Ver toda la carta
@@ -89,8 +89,8 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.clasicas.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                <img
-                  src={withBase(pizza.imagen)}
+                  <img
+                    src={withBase(pizza.imagen)}
                     alt={pizza.nombre}
                     class="w-full h-48 object-cover"
                   />
@@ -138,8 +138,8 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.especiales.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                <img
-                  src={withBase(pizza.imagen)}
+                  <img
+                    src={withBase(pizza.imagen)}
                     alt={pizza.nombre}
                     class="w-full h-48 object-cover"
                   />
