@@ -13,13 +13,12 @@ const base = import.meta.env.BASE_URL;
       <!-- Logo y título -->
       <a href={`${base}`} class="flex items-center gap-3 group">
         <div
-          class="relative w-16 h-16 rounded-full bg-white ring-2 ring-[#1E1E1E] shadow-md overflow-hidden flex items-center justify-center"
+          class="relative w-16 h-16shadow-md overflow-hidden flex items-center justify-center"
           aria-hidden="true"
         >
           <img
             src={`${base}images/logo.png`}
             alt="Pizza Per Tutti"
-            class="w-12 h-12 object-contain drop-shadow-sm"
             loading="lazy"
           />
         </div>
@@ -44,7 +43,7 @@ const base = import.meta.env.BASE_URL;
           Inicio
         </a>
         <a
-          href={`${base}/carta`}
+          href={`${base}carta`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Carta
@@ -126,7 +125,7 @@ const base = import.meta.env.BASE_URL;
           Inicio
         </a>
         <a
-          href={`${base}/carta`}
+          href={`${base}carta`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Carta
