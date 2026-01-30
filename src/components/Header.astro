@@ -1,6 +1,6 @@
 ---
 const {
-  siteTitle = "Pizza Pertuti",
+  siteTitle = "Pizza Per Tutti",
   openHours = { start: "19:00", end: "23:00" },
   town = "tu pueblo",
 } = Astro.props;
@@ -69,10 +69,10 @@ const base = import.meta.env.BASE_URL;
       </nav>
 
       <!-- Status Badge & CTA -->
-      <div class="hidden md:flex items-center gap-4">
+      <div class="flex items-center gap-3 md:gap-4">
         <div
           id="status-badge"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-gray-50 border border-gray-200"
+          class="inline-flex items-center gap-2 px-3 py-2 md:px-4 rounded-full text-xs font-semibold bg-gray-50 border border-gray-200 whitespace-nowrap"
         >
           <span
             id="status-dot"
