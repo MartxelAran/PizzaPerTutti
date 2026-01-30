@@ -4,56 +4,63 @@ const {
   openHours = { start: "19:00", end: "23:00" },
   town = "tu pueblo",
 } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="bg-white shadow-md sticky top-0 z-50">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo y título -->
-      <div class="flex items-center gap-3">
+      <a href={`${base}`} class="flex items-center gap-3 group">
         <div
-          class="bg-[#C0392B] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl"
+          class="relative w-16 h-16 rounded-full bg-white ring-2 ring-[#1E1E1E] shadow-md overflow-hidden flex items-center justify-center"
+          aria-hidden="true"
         >
-          🍕
+          <img
+            src={`${base}images/logo.png`}
+            alt="Pizza Per Tutti"
+            class="w-12 h-12 object-contain drop-shadow-sm"
+            loading="lazy"
+          />
         </div>
         <div>
-          <h1 class="text-2xl font-[Lobster] text-[#2C2C2C] leading-tight">
+          <h1 class="text-2xl font-[Lobster] text-[#2C2C2C] leading-tight group-hover:text-[#C0392B] transition-colors">
             {siteTitle}
           </h1>
           <p class="text-xs text-gray-500 font-[Open_Sans]">
             Auténtica pizza italiana · {town}
           </p>
         </div>
-      </div>
+      </a>
 
       <!-- Navegación Desktop -->
       <nav class="hidden lg:flex items-center gap-8">
         <a
-          href="/"
+          href={`${base}`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Inicio
         </a>
         <a
-          href="/carta"
+          href={`${base}carta`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Carta
         </a>
         <a
-          href="#sobre"
+          href={`${base}#sobre`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Nosotros
         </a>
         <a
-          href="#galeria"
+          href={`${base}#galeria`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Galería
         </a>
         <a
-          href="#contacto"
+          href={`${base}#contacto`}
           class="text-gray-700 hover:text-[#C0392B] font-medium transition-colors duration-200"
         >
           Contacto
@@ -111,31 +118,31 @@ const {
     >
       <div class="flex flex-col gap-3 mt-4">
         <a
-          href="/"
+          href={`${base}`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Inicio
         </a>
         <a
-          href="/carta"
+          href={`${base}carta`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Carta
         </a>
         <a
-          href="#sobre"
+          href={`${base}#sobre`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Nosotros
         </a>
         <a
-          href="#galeria"
+          href={`${base}#galeria`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Galería
         </a>
         <a
-          href="#contacto"
+          href={`${base}#contacto`}
           class="text-gray-700 hover:text-[#C0392B] font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Contacto

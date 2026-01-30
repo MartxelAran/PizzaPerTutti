@@ -1,3 +1,7 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
 <section id="galeria" class="py-20 px-6 bg-[#F8E5C0]">
   <div class="container mx-auto max-w-6xl">
     <!-- Título de sección -->
@@ -22,7 +26,7 @@
         class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
       >
         <img
-          src="/images/gallery-1.jpg"
+          src={`${base}images/gallery-1.jpg`}
           alt="Pizza especial"
           class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
         />
@@ -40,7 +44,7 @@
         class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
       >
         <img
-          src="/images/gallery-2.jpg"
+          src={`${base}images/gallery-2.jpg`}
           alt="Pizza margherita"
           class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
         />
@@ -58,7 +62,7 @@
         class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
       >
         <img
-          src="/images/gallery-3.jpg"
+          src={`${base}images/gallery-3.jpg`}
           alt="Pizza barbacoa"
           class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
         />
@@ -76,7 +80,7 @@
         class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
       >
         <img
-          src="/images/gallery-4.jpg"
+          src={`${base}images/gallery-4.jpg`}
           alt="Pizza 4 quesos"
           class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
         />
@@ -94,7 +98,7 @@
     <!-- CTA Button -->
     <div class="text-center mt-12">
       <a
-        href="/carta"
+        href={`${base}carta`}
         class="inline-flex items-center gap-2 bg-[#C0392B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#A93226] transition-all duration-200 shadow-lg hover:shadow-xl"
       >
         <span>🍕</span>
