@@ -56,11 +56,11 @@
           class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-100 h-full min-h-[400px]"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.694219281771!2d-2.495841!3d43.064389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd50f7c8e55da59f%3A0x3b2e37eae06f94a3!2sPizza%20Per%20Tutti!5e0!3m2!1ses!2ses!4v1697034600000!5m2!1ses!2ses"
+            src="https://www.google.com/maps?q=Pizza%20Pertutti@43.0491548,-2.4978301&z=18&output=embed"
             width="100%"
             height="100%"
             style="border:0; min-height: 400px;"
-            allowfullscreen=""
+            allowfullscreen="true"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             class="w-full h-full"></iframe>
@@ -152,11 +152,13 @@
             </div>
             <div class="text-sm text-gray-600">Todos los días de la semana</div>
             <div
+              id="contact-status-badge"
               class="inline-flex items-center gap-2 mt-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
             >
-              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
-              ></span>
-              <span>Abierto ahora</span>
+              <span
+                id="contact-status-dot"
+                class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span id="contact-status-text">Abierto ahora</span>
             </div>
           </div>
         </div>
@@ -164,3 +166,39 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Contact status badge logic (mirrors Header)
+  const contactStart = "19:00";
+  const contactEnd = "23:00";
+
+  function contactTimeToMinutes(t: string): number {
+    const [h, m] = t.split(":").map(Number);
+    return h * 60 + m;
+  }
+
+  const contactNow = new Date();
+  const contactMins = contactNow.getHours() * 60 + contactNow.getMinutes();
+  const contactOpen =
+    contactMins >= contactTimeToMinutes(contactStart) &&
+    contactMins <= contactTimeToMinutes(contactEnd);
+
+  const contactDot = document.getElementById("contact-status-dot");
+  const contactText = document.getElementById("contact-status-text");
+  const contactBadge = document.getElementById("contact-status-badge");
+
+  if (contactDot && contactText && contactBadge) {
+    if (contactOpen) {
+      contactDot.style.backgroundColor = "#2ecc71";
+      contactText.textContent = "Abierto ahora";
+      contactBadge.classList.add("bg-green-100", "text-green-700");
+      contactBadge.classList.remove("bg-red-100", "text-red-700");
+    } else {
+      contactDot.style.backgroundColor = "#e74c3c";
+      contactText.textContent =
+        "Cerrado · " + contactStart + " - " + contactEnd;
+      contactBadge.classList.add("bg-red-100", "text-red-700");
+      contactBadge.classList.remove("bg-green-100", "text-green-700");
+    }
+  }
+</script>
