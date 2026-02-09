@@ -1,7 +1,7 @@
 ---
 const {
   siteTitle = "Pizza Per Tutti",
-  openHours = { start: "19:00", end: "23:00" },
+  weeklyHoursText = "Mar-Vie 6:30 - 22:30 · Sáb-Dom 6:30 - 23:00",
   town = "tu pueblo",
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -64,13 +64,13 @@ const base = import.meta.env.BASE_URL;
           id="status-badge"
           class="inline-flex items-center gap-2 px-3 py-2 md:px-4 rounded-full text-xs font-semibold bg-gray-50 border border-gray-200 whitespace-nowrap"
         >
-          <span
-            id="status-dot"
-            class="w-2.5 h-2.5 rounded-full bg-gray-400 animate-pulse"></span>
-          <span id="status-text" class="text-gray-700">
-            {openHours.start} - {openHours.end}
-          </span>
-        </div>
+           <span
+             id="status-dot"
+             class="w-2.5 h-2.5 rounded-full bg-gray-400 animate-pulse"></span>
+           <span id="status-text" class="text-gray-700">
+            {weeklyHoursText}
+           </span>
+         </div>
 
         <a
           href="tel:+34943797526"
@@ -151,17 +151,42 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   // Status badge logic
-  const start = "19:00";
-  const end = "23:00";
+  type DaySchedule = { start: string; end: string } | null;
+
+  function getTodaySchedule(d: Date): DaySchedule {
+    const day = d.getDay(); // 0=domingo ... 6=sábado
+    if (day === 1) return null; // lunes: cerrado
+    if (day >= 2 && day <= 5) return { start: "06:30", end: "22:30" }; // mar-vie
+    return { start: "06:30", end: "23:00" }; // sáb-dom
+  }
 
   function timeToMinutes(t: string): number {
     const [h, m] = t.split(":").map(Number);
     return h * 60 + m;
   }
 
+  function displayTime(t: string): string {
+    return t.startsWith("0") ? t.slice(1) : t;
+  }
+
+  function getNextOpenLabel(d: Date): string {
+    const day = d.getDay();
+    // Si es lunes, la próxima apertura es martes a las 6:30.
+    if (day === 1) return "Abrimos martes 6:30";
+    // Fuera de horario en un día de apertura: mostrar horario de hoy.
+    const sched = getTodaySchedule(d);
+    return sched
+      ? `Hoy ${displayTime(sched.start)} - ${displayTime(sched.end)}`
+      : "Cerrado hoy";
+  }
+
   const now = new Date();
   const mins = now.getHours() * 60 + now.getMinutes();
-  const open = mins >= timeToMinutes(start) && mins <= timeToMinutes(end);
+  const schedule = getTodaySchedule(now);
+  const open =
+    schedule !== null &&
+    mins >= timeToMinutes(schedule.start) &&
+    mins <= timeToMinutes(schedule.end);
 
   const dot = document.getElementById("status-dot");
   const text = document.getElementById("status-text");
@@ -175,7 +200,7 @@ const base = import.meta.env.BASE_URL;
       badge.classList.remove("bg-gray-50", "border-gray-200");
     } else {
       dot.style.backgroundColor = "#e74c3c";
-      text.textContent = "Cerrado · " + start + " - " + end;
+      text.textContent = "Cerrado · " + getNextOpenLabel(now);
       badge.classList.add("bg-red-50", "border-red-200");
       badge.classList.remove("bg-gray-50", "border-gray-200");
     }

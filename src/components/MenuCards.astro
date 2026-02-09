@@ -22,6 +22,26 @@ const pizzasAMostrar = limit_cards
   </h1>
 
   <div class="max-w-6xl mx-auto space-y-16">
+    <!-- Información de pedido -->
+    <div class="bg-white/70 rounded-2xl shadow-md border border-white/80 p-6">
+      <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+        <div>
+          <div class="font-semibold text-[#2C2C2C] mb-1">Extras</div>
+          <div>Añade extras a cualquier pizza: +1€ por cada extra.</div>
+        </div>
+        <div>
+          <div class="font-semibold text-[#2C2C2C] mb-1">A domicilio</div>
+          <div>El envío a domicilio tiene un suplemento de +2€.</div>
+        </div>
+        <div>
+          <div class="font-semibold text-[#2C2C2C] mb-1">Mitades</div>
+          <div>
+            Se pueden hacer mitades: una mitad de tomate, mozzarella y 2
+            ingredientes, y la otra mitad de 4 ingredientes.
+          </div>
+        </div>
+      </div>
+    </div>
     {
       limit_cards ? (
         // Modo limitado: mostrar solo 5 pizzas sin categorías

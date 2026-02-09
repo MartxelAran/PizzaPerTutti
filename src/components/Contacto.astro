@@ -147,13 +147,18 @@
           </div>
           <div class="flex-1">
             <div class="text-sm text-gray-600 mb-1">Horario</div>
-            <div class="text-lg font-semibold text-[#2C2C2C] mb-1">
-              19:00 - 23:00
+            <div class="space-y-1">
+              <div class="text-lg font-semibold text-[#2C2C2C]">
+                Mar - Vie: 6:30 - 22:30
+              </div>
+              <div class="text-lg font-semibold text-[#2C2C2C]">
+                Sáb - Dom: 6:30 - 23:00
+              </div>
+              <div class="text-sm text-gray-600">Lunes: cerrado</div>
             </div>
-            <div class="text-sm text-gray-600">Todos los días de la semana</div>
             <div
               id="contact-status-badge"
-              class="inline-flex items-center gap-2 mt-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+              class="inline-flex items-center gap-2 mt-3 bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
             >
               <span
                 id="contact-status-dot"
@@ -169,19 +174,40 @@
 
 <script>
   // Contact status badge logic (mirrors Header)
-  const contactStart = "19:00";
-  const contactEnd = "23:00";
+  type DaySchedule = { start: string; end: string } | null;
+
+  function getTodaySchedule(d: Date): DaySchedule {
+    const day = d.getDay(); // 0=domingo ... 6=sábado
+    if (day === 1) return null; // lunes: cerrado
+    if (day >= 2 && day <= 5) return { start: "06:30", end: "22:30" }; // mar-vie
+    return { start: "06:30", end: "23:00" }; // sáb-dom
+  }
 
   function contactTimeToMinutes(t: string): number {
     const [h, m] = t.split(":").map(Number);
     return h * 60 + m;
   }
 
+  function displayTime(t: string): string {
+    return t.startsWith("0") ? t.slice(1) : t;
+  }
+
+  function getNextOpenLabel(d: Date): string {
+    const day = d.getDay();
+    if (day === 1) return "Abrimos martes 6:30";
+    const sched = getTodaySchedule(d);
+    return sched
+      ? `Hoy ${displayTime(sched.start)} - ${displayTime(sched.end)}`
+      : "Cerrado hoy";
+  }
+
   const contactNow = new Date();
   const contactMins = contactNow.getHours() * 60 + contactNow.getMinutes();
+  const contactSchedule = getTodaySchedule(contactNow);
   const contactOpen =
-    contactMins >= contactTimeToMinutes(contactStart) &&
-    contactMins <= contactTimeToMinutes(contactEnd);
+    contactSchedule !== null &&
+    contactMins >= contactTimeToMinutes(contactSchedule.start) &&
+    contactMins <= contactTimeToMinutes(contactSchedule.end);
 
   const contactDot = document.getElementById("contact-status-dot");
   const contactText = document.getElementById("contact-status-text");
@@ -192,12 +218,13 @@
       contactDot.style.backgroundColor = "#2ecc71";
       contactText.textContent = "Abierto ahora";
       contactBadge.classList.add("bg-green-100", "text-green-700");
+      contactBadge.classList.remove("bg-gray-100", "text-gray-700");
       contactBadge.classList.remove("bg-red-100", "text-red-700");
     } else {
       contactDot.style.backgroundColor = "#e74c3c";
-      contactText.textContent =
-        "Cerrado · " + contactStart + " - " + contactEnd;
+      contactText.textContent = "Cerrado · " + getNextOpenLabel(contactNow);
       contactBadge.classList.add("bg-red-100", "text-red-700");
+      contactBadge.classList.remove("bg-gray-100", "text-gray-700");
       contactBadge.classList.remove("bg-green-100", "text-green-700");
     }
   }
