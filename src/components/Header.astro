@@ -1,7 +1,7 @@
 ---
 const {
   siteTitle = "Pizza Per Tutti",
-  weeklyHoursText = "Mar-Vie 6:30 - 22:30 · Sáb-Dom 6:30 - 23:00",
+  weeklyHoursText = "Mar-Vie 18:30 - 22:30 · Sáb-Dom 18:30 - 23:00",
   town = "tu pueblo",
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -64,13 +64,13 @@ const base = import.meta.env.BASE_URL;
           id="status-badge"
           class="inline-flex items-center gap-2 px-3 py-2 md:px-4 rounded-full text-xs font-semibold bg-gray-50 border border-gray-200 whitespace-nowrap"
         >
-           <span
-             id="status-dot"
-             class="w-2.5 h-2.5 rounded-full bg-gray-400 animate-pulse"></span>
-           <span id="status-text" class="text-gray-700">
+          <span
+            id="status-dot"
+            class="w-2.5 h-2.5 rounded-full bg-gray-400 animate-pulse"></span>
+          <span id="status-text" class="text-gray-700">
             {weeklyHoursText}
-           </span>
-         </div>
+          </span>
+        </div>
 
         <a
           href="tel:+34943797526"
@@ -156,8 +156,8 @@ const base = import.meta.env.BASE_URL;
   function getTodaySchedule(d: Date): DaySchedule {
     const day = d.getDay(); // 0=domingo ... 6=sábado
     if (day === 1) return null; // lunes: cerrado
-    if (day >= 2 && day <= 5) return { start: "06:30", end: "22:30" }; // mar-vie
-    return { start: "06:30", end: "23:00" }; // sáb-dom
+    if (day >= 2 && day <= 5) return { start: "18:30", end: "22:30" }; // mar-vie
+    return { start: "18:30", end: "23:00" }; // sáb-dom
   }
 
   function timeToMinutes(t: string): number {
@@ -172,7 +172,7 @@ const base = import.meta.env.BASE_URL;
   function getNextOpenLabel(d: Date): string {
     const day = d.getDay();
     // Si es lunes, la próxima apertura es martes a las 6:30.
-    if (day === 1) return "Abrimos martes 6:30";
+    if (day === 1) return "Abrimos martes 18:30";
     // Fuera de horario en un día de apertura: mostrar horario de hoy.
     const sched = getTodaySchedule(d);
     return sched

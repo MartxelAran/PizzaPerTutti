@@ -149,10 +149,10 @@
             <div class="text-sm text-gray-600 mb-1">Horario</div>
             <div class="space-y-1">
               <div class="text-lg font-semibold text-[#2C2C2C]">
-                Mar - Vie: 6:30 - 22:30
+                Mar - Vie: 18:30 - 22:30
               </div>
               <div class="text-lg font-semibold text-[#2C2C2C]">
-                Sáb - Dom: 6:30 - 23:00
+                Sáb - Dom: 18:30 - 23:00
               </div>
               <div class="text-sm text-gray-600">Lunes: cerrado</div>
             </div>
@@ -179,8 +179,8 @@
   function getTodaySchedule(d: Date): DaySchedule {
     const day = d.getDay(); // 0=domingo ... 6=sábado
     if (day === 1) return null; // lunes: cerrado
-    if (day >= 2 && day <= 5) return { start: "06:30", end: "22:30" }; // mar-vie
-    return { start: "06:30", end: "23:00" }; // sáb-dom
+    if (day >= 2 && day <= 5) return { start: "18:30", end: "22:30" }; // mar-vie
+    return { start: "18:30", end: "23:00" }; // sáb-dom
   }
 
   function contactTimeToMinutes(t: string): number {
@@ -194,7 +194,7 @@
 
   function getNextOpenLabel(d: Date): string {
     const day = d.getDay();
-    if (day === 1) return "Abrimos martes 6:30";
+    if (day === 1) return "Abrimos martes 18:30";
     const sched = getTodaySchedule(d);
     return sched
       ? `Hoy ${displayTime(sched.start)} - ${displayTime(sched.end)}`
