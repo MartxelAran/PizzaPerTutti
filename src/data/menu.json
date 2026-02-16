@@ -48,7 +48,7 @@
       "nombre": "Napoli",
       "ingredientes": "Tomate, mozzarella, anchoa, aceituna negra",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/NAPOLI.jpeg",
       "alergenos": [
         "gluten",
         "lacteos",
@@ -82,7 +82,7 @@
       "nombre": "Tonno",
       "ingredientes": "Tomate, mozzarella, atún, cebolla",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/TONNO.jpeg",
       "alergenos": [
         "gluten",
         "lacteos",
@@ -106,7 +106,7 @@
       "nombre": "Pepperoni",
       "ingredientes": "Tomate, mozzarella, pepperoni",
       "precio": "14€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/PEPERONI.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -117,7 +117,7 @@
       "nombre": "Funghi",
       "ingredientes": "Tomate, mozzarella, champiñones",
       "precio": "14€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/FUNGHI.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -128,7 +128,7 @@
       "nombre": "4 Formaggi",
       "ingredientes": "Tomate, mozzarella, gorgonzola, cheddar, parmesano",
       "precio": "16€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/4_FORMAGGI.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -163,7 +163,7 @@
       "nombre": "Parmigiana",
       "ingredientes": "Tomate, mozzarella, york, parmesano",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/PARMESANA.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -198,7 +198,7 @@
       "nombre": "4 Stagioni",
       "ingredientes": "Tomate, mozzarella, york, alcachofas, champiñones, atún",
       "precio": "16€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/4_ESTACIONES.jpeg",
       "alergenos": [
         "gluten",
         "lacteos",
@@ -222,7 +222,7 @@
       "nombre": "di Pep",
       "ingredientes": "Mozzarella, bacon, pimientos verdes, parmesano y nata",
       "precio": "17€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/DI_PEP.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -266,7 +266,7 @@
       "nombre": "Pesto",
       "ingredientes": "Mozzarella, bacon, pesto y parmesano",
       "precio": "16€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/PESTO.jpeg",
       "alergenos": [
         "gluten",
         "lacteos",
@@ -300,7 +300,7 @@
       "nombre": "Carbonara",
       "ingredientes": "Mozzarella, champiñones, bacon, parmesano, nata",
       "precio": "16€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/CARBONARA.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -311,7 +311,7 @@
       "nombre": "Tropikala",
       "ingredientes": "Mozzarella, york, piña",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/TROPIKALA.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"

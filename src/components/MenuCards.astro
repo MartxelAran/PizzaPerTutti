@@ -6,6 +6,10 @@ const base = import.meta.env.BASE_URL;
 const withBase = (path: string) =>
   path.startsWith("/") ? `${base}${path.slice(1)}` : `${base}${path}`;
 
+// Usamos esta ruta como "sentinel" para indicar que no hay foto disponible
+const NO_FOTO_SRC = "/images/pizzas/barbacoa.png";
+const tieneFoto = (path?: string) => Boolean(path && path !== NO_FOTO_SRC);
+
 // Combinar todas las pizzas y limitar a 5 si limit_cards es true
 const todasLasPizzas = [...menu.clasicas, ...menu.especiales];
 const pizzasAMostrar = limit_cards
@@ -49,14 +53,28 @@ const pizzasAMostrar = limit_cards
           <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6 text-center">
             Nuestras Mejores Pizzas
           </h2>
-          <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-            {pizzasAMostrar.map((pizza) => (
-              <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                <img
-                  src={withBase(pizza.imagen)}
-                  alt={pizza.nombre}
-                  class="w-full h-48 object-cover"
-                />
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+              {pizzasAMostrar.map((pizza) => (
+                <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
+                {tieneFoto(pizza.imagen) ? (
+                  <img
+                    src={withBase(pizza.imagen)}
+                    alt={pizza.nombre}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div
+                    class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                    role="img"
+                    aria-label={`${pizza.nombre} (sin foto)`}
+                  >
+                    <div class="text-3xl leading-none">📷</div>
+                    <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                    <div class="text-xs">No tenemos imagen</div>
+                  </div>
+                )}
                 <div class="p-4 flex flex-col justify-between">
                   <div>
                     <h3 class="text-xl font-bold text-[#2C2C2C]">
@@ -109,11 +127,25 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.clasicas.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                  <img
-                    src={withBase(pizza.imagen)}
-                    alt={pizza.nombre}
-                    class="w-full h-48 object-cover"
-                  />
+                  {tieneFoto(pizza.imagen) ? (
+                    <img
+                      src={withBase(pizza.imagen)}
+                      alt={pizza.nombre}
+                      class="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div
+                      class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                      role="img"
+                      aria-label={`${pizza.nombre} (sin foto)`}
+                    >
+                      <div class="text-3xl leading-none">📷</div>
+                      <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                      <div class="text-xs">No tenemos imagen</div>
+                    </div>
+                  )}
                   <div class="p-4 flex flex-col justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#2C2C2C]">
@@ -158,11 +190,25 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.especiales.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                  <img
-                    src={withBase(pizza.imagen)}
-                    alt={pizza.nombre}
-                    class="w-full h-48 object-cover"
-                  />
+                  {tieneFoto(pizza.imagen) ? (
+                    <img
+                      src={withBase(pizza.imagen)}
+                      alt={pizza.nombre}
+                      class="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div
+                      class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                      role="img"
+                      aria-label={`${pizza.nombre} (sin foto)`}
+                    >
+                      <div class="text-3xl leading-none">📷</div>
+                      <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                      <div class="text-xs">No tenemos imagen</div>
+                    </div>
+                  )}
                   <div class="p-4 flex flex-col justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#2C2C2C]">
