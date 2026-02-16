@@ -207,7 +207,7 @@
     },
     {
       "id": 16,
-      "nombre": "di Franky",
+      "nombre": "Di Franky",
       "ingredientes": "Tomate, mozzarella, york, ternera, frankfurt, parmesano",
       "precio": "17€",
       "imagen": "/images/pizzas/DI_FRANKY_2.jpeg",
@@ -219,7 +219,7 @@
     },
     {
       "id": 17,
-      "nombre": "di Pep",
+      "nombre": "Di Pep",
       "ingredientes": "Mozzarella, bacon, pimientos verdes, parmesano y nata",
       "precio": "17€",
       "imagen": "/images/pizzas/DI_PEP.jpeg",
@@ -230,7 +230,7 @@
     },
     {
       "id": 18,
-      "nombre": "di Kliba",
+      "nombre": "Di Kliba",
       "ingredientes": "Tomate, mozzarella, prosciutto, champiñones, queso de cabra y cheddar",
       "precio": "17€",
       "imagen": "/images/pizzas/DI_KLIBA.jpeg",
@@ -244,7 +244,7 @@
       "nombre": "Mama Mia",
       "ingredientes": "Tomate, mozzarella, cheddar, parmesano, carne de ternera",
       "precio": "17€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/MAMA_MIA.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -255,7 +255,7 @@
       "nombre": "Marijey",
       "ingredientes": "Mozzarella, berenjena, pollo, parmesano y nata",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/MARIJEY.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -278,7 +278,7 @@
       "nombre": "Da Mikelotti (Napoletana)",
       "ingredientes": "Tomate, mozzarella, di buffala y albahaca",
       "precio": "15€",
-      "imagen": "/images/pizzas/barbacoa.png",
+      "imagen": "/images/pizzas/DAMINELOTTI.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"
@@ -312,6 +312,17 @@
       "ingredientes": "Mozzarella, york, piña",
       "precio": "15€",
       "imagen": "/images/pizzas/TROPIKALA.jpeg",
+      "alergenos": [
+        "gluten",
+        "lacteos"
+      ]
+    },
+    {
+      "id": 26,
+      "nombre": "Bella Cherry",
+      "ingredientes": "Tomate, mozzarella, queso de bufala, tomate cherry, rucula",
+      "precio": "17€",
+      "imagen": "/images/pizzas/GREEN_CHERRY.jpeg",
       "alergenos": [
         "gluten",
         "lacteos"

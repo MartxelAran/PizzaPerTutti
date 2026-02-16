@@ -10,10 +10,38 @@ const withBase = (path: string) =>
 const NO_FOTO_SRC = "/images/pizzas/barbacoa.png";
 const tieneFoto = (path?: string) => Boolean(path && path !== NO_FOTO_SRC);
 
-// Combinar todas las pizzas y limitar a 5 si limit_cards es true
+// Combinar todas las pizzas y, si limit_cards es true, mostrar una selección
 const todasLasPizzas = [...menu.clasicas, ...menu.especiales];
+const normalizarNombre = (nombre: string) =>
+  nombre
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+// En modo limitado mostramos solo estas pizzas (en este orden)
+const pizzasDestacadas = [
+  ["Barbakoa"],
+  ["Prosciutto"],
+  ["4 Formaggi"],
+  ["Di kliba"],
+  ["Carbonara"],
+  ["Bolognesa"],
+]
+  .map((aliases) =>
+    todasLasPizzas.find((pizza) =>
+      aliases.some(
+        (alias) => normalizarNombre(pizza.nombre) === normalizarNombre(alias),
+      ),
+    ),
+  )
+  .filter(
+    (pizza): pizza is (typeof todasLasPizzas)[number] => pizza !== undefined,
+  );
+
 const pizzasAMostrar = limit_cards
-  ? todasLasPizzas.slice(0, 6)
+  ? pizzasDestacadas.length > 0
+    ? pizzasDestacadas
+    : todasLasPizzas.slice(0, 6)
   : todasLasPizzas;
 ---
 
@@ -53,9 +81,9 @@ const pizzasAMostrar = limit_cards
           <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6 text-center">
             Nuestras Mejores Pizzas
           </h2>
-            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-              {pizzasAMostrar.map((pizza) => (
-                <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
+          <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+            {pizzasAMostrar.map((pizza) => (
+              <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
                 {tieneFoto(pizza.imagen) ? (
                   <img
                     src={withBase(pizza.imagen)}
