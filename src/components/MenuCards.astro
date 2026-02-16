@@ -84,7 +84,8 @@ const pizzasAMostrar = limit_cards
           <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
             {pizzasAMostrar.map((pizza) => (
               <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                {tieneFoto(pizza.imagen) ? (
+                <div class="relative">
+                  {tieneFoto(pizza.imagen) ? (
                   <img
                     src={withBase(pizza.imagen)}
                     alt={pizza.nombre}
@@ -102,7 +103,13 @@ const pizzasAMostrar = limit_cards
                     <div class="mt-2 text-sm font-semibold">Sin foto</div>
                     <div class="text-xs">No tenemos imagen</div>
                   </div>
-                )}
+                  )}
+                  {pizza.nuevo && (
+                    <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
+                      NEW
+                    </span>
+                  )}
+                </div>
                 <div class="p-4 flex flex-col justify-between">
                   <div>
                     <h3 class="text-xl font-bold text-[#2C2C2C]">
@@ -155,7 +162,8 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.clasicas.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                  {tieneFoto(pizza.imagen) ? (
+                  <div class="relative">
+                    {tieneFoto(pizza.imagen) ? (
                     <img
                       src={withBase(pizza.imagen)}
                       alt={pizza.nombre}
@@ -173,7 +181,13 @@ const pizzasAMostrar = limit_cards
                       <div class="mt-2 text-sm font-semibold">Sin foto</div>
                       <div class="text-xs">No tenemos imagen</div>
                     </div>
-                  )}
+                    )}
+                    {pizza.nuevo && (
+                      <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
+                        NEW
+                      </span>
+                    )}
+                  </div>
                   <div class="p-4 flex flex-col justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#2C2C2C]">
@@ -218,7 +232,8 @@ const pizzasAMostrar = limit_cards
             <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
               {menu.especiales.map((pizza) => (
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
-                  {tieneFoto(pizza.imagen) ? (
+                  <div class="relative">
+                    {tieneFoto(pizza.imagen) ? (
                     <img
                       src={withBase(pizza.imagen)}
                       alt={pizza.nombre}
@@ -236,7 +251,13 @@ const pizzasAMostrar = limit_cards
                       <div class="mt-2 text-sm font-semibold">Sin foto</div>
                       <div class="text-xs">No tenemos imagen</div>
                     </div>
-                  )}
+                    )}
+                    {pizza.nuevo && (
+                      <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
+                        NEW
+                      </span>
+                    )}
+                  </div>
                   <div class="p-4 flex flex-col justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#2C2C2C]">

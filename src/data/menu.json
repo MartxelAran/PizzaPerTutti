@@ -320,6 +320,7 @@
     {
       "id": 26,
       "nombre": "Bella Cherry",
+      "nuevo": true,
       "ingredientes": "Tomate, mozzarella, queso de bufala, tomate cherry, rucula",
       "precio": "17€",
       "imagen": "/images/pizzas/GREEN_CHERRY.jpeg",
