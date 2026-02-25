@@ -79,30 +79,30 @@ const pizzasAMostrar = limit_cards
         // Modo limitado: mostrar solo 5 pizzas sin categorías
         <div>
           <h2 class="text-3xl font-[Lobster] text-[#C0392B] mb-6 text-center">
-            Nuestras Mejores Pizzas
+            Nuestras Pizzas Más Vendidas
           </h2>
           <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
             {pizzasAMostrar.map((pizza) => (
               <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
                 <div class="relative">
                   {tieneFoto(pizza.imagen) ? (
-                  <img
-                    src={withBase(pizza.imagen)}
-                    alt={pizza.nombre}
-                    class="w-full h-48 object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <div
-                    class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
-                    role="img"
-                    aria-label={`${pizza.nombre} (sin foto)`}
-                  >
-                    <div class="text-3xl leading-none">📷</div>
-                    <div class="mt-2 text-sm font-semibold">Sin foto</div>
-                    <div class="text-xs">No tenemos imagen</div>
-                  </div>
+                    <img
+                      src={withBase(pizza.imagen)}
+                      alt={pizza.nombre}
+                      class="w-full h-48 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div
+                      class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                      role="img"
+                      aria-label={`${pizza.nombre} (sin foto)`}
+                    >
+                      <div class="text-3xl leading-none">📷</div>
+                      <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                      <div class="text-xs">No tenemos imagen</div>
+                    </div>
                   )}
                   {pizza.nuevo && (
                     <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
@@ -164,23 +164,23 @@ const pizzasAMostrar = limit_cards
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
                   <div class="relative">
                     {tieneFoto(pizza.imagen) ? (
-                    <img
-                      src={withBase(pizza.imagen)}
-                      alt={pizza.nombre}
-                      class="w-full h-48 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div
-                      class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
-                      role="img"
-                      aria-label={`${pizza.nombre} (sin foto)`}
-                    >
-                      <div class="text-3xl leading-none">📷</div>
-                      <div class="mt-2 text-sm font-semibold">Sin foto</div>
-                      <div class="text-xs">No tenemos imagen</div>
-                    </div>
+                      <img
+                        src={withBase(pizza.imagen)}
+                        alt={pizza.nombre}
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <div
+                        class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                        role="img"
+                        aria-label={`${pizza.nombre} (sin foto)`}
+                      >
+                        <div class="text-3xl leading-none">📷</div>
+                        <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                        <div class="text-xs">No tenemos imagen</div>
+                      </div>
                     )}
                     {pizza.nuevo && (
                       <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
@@ -234,23 +234,23 @@ const pizzasAMostrar = limit_cards
                 <div class="bg-white/90 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition hover:-translate-y-1">
                   <div class="relative">
                     {tieneFoto(pizza.imagen) ? (
-                    <img
-                      src={withBase(pizza.imagen)}
-                      alt={pizza.nombre}
-                      class="w-full h-48 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div
-                      class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
-                      role="img"
-                      aria-label={`${pizza.nombre} (sin foto)`}
-                    >
-                      <div class="text-3xl leading-none">📷</div>
-                      <div class="mt-2 text-sm font-semibold">Sin foto</div>
-                      <div class="text-xs">No tenemos imagen</div>
-                    </div>
+                      <img
+                        src={withBase(pizza.imagen)}
+                        alt={pizza.nombre}
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <div
+                        class="w-full h-48 bg-gray-100 flex flex-col items-center justify-center text-gray-500"
+                        role="img"
+                        aria-label={`${pizza.nombre} (sin foto)`}
+                      >
+                        <div class="text-3xl leading-none">📷</div>
+                        <div class="mt-2 text-sm font-semibold">Sin foto</div>
+                        <div class="text-xs">No tenemos imagen</div>
+                      </div>
                     )}
                     {pizza.nuevo && (
                       <span class="absolute top-3 left-3 bg-[#C0392B] text-white text-xs font-extrabold px-2 py-1 rounded-full shadow">
