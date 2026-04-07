@@ -328,6 +328,19 @@
         "gluten",
         "lacteos"
       ]
+    },
+    {
+      "id": 27,
+      "nombre": "Nociola",
+      "nuevo": true,
+      "ingredientes": "Mozzarela, pesto, parmesano , nueces, miel",
+      "precio": "17€",
+      "imagen": "/images/pizzas/GREEN_CHERRY.jpeg",
+      "alergenos": [
+        "gluten",
+        "lacteos",
+        "frutos_secos"
+      ]
     }
   ],
   "postres": [
